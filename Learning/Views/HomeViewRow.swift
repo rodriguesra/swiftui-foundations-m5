@@ -69,7 +69,7 @@ struct HomeViewRow: View {
                 }
                 .padding(.leading, 20)
             }
-            .foregroundColor(.black)
+            .accentColor(.black)
             .padding(.horizontal, 20)
         }
     }
