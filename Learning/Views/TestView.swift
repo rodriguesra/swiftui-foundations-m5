@@ -10,7 +10,12 @@ import SwiftUI
 struct TestView: View {
     
     @EnvironmentObject var model: ContentModel
-    @State var selectedAnswerIndex = -1
+    
+    @State var selectedAnswerIndex: Int?
+    @State var submitted = false
+    
+    @State var numCorrect = 0
+    
     
     var body: some View {
         
@@ -31,21 +36,81 @@ struct TestView: View {
                     VStack {
                         ForEach(0..<model.currentQuestion!.answers.count, id: \.self) { index in
                             
-                            RectangleCard(color: .white)
-                                .frame(height: 48)
-                            
                             Button(action: {
-                                // TODO
+                                // Track the selected index
+                                selectedAnswerIndex = index
+                                
                             }, label: {
-                                Text(model.currentQuestion!.answers[index])
+                                ZStack {
+                                    if submitted == false {
+                                        RectangleCard(color: index == selectedAnswerIndex ? .gray : .white)
+                                            .frame(height: 48)
+                                    }
+                                    else {
+                                        // Answer has been submitted
+                                        if index == selectedAnswerIndex && index == model.currentQuestion!.correctIndex {
+                                            
+                                            // User has selected the right answer, show a green background
+                                            RectangleCard(color: .green)
+                                                .frame(height: 48)
+                                        }
+                                        
+                                        else if index == selectedAnswerIndex && index != model.currentQuestion!.correctIndex {
+                                            
+                                            // User has selected the wrong answer, show a red background
+                                            RectangleCard(color: .red)
+                                                .frame(height: 48)
+                                        }
+                                        
+                                        else if index == model.currentQuestion!.correctIndex {
+                                            
+                                            // This button is the correct answer
+                                            RectangleCard(color: .green)
+                                                .frame(height: 48)
+                                        }
+                                        else {
+                                            RectangleCard(color: .white)
+                                                .frame(height: 48)
+                                        }
+                                    }
+                                    
+                                    Text(model.currentQuestion!.answers[index])
+                                    
+                                }
                             })
+                            .disabled(submitted)
                         }
                     }
                     .accentColor(.black)
                     .padding()
                 }
                 
-                // Button
+                // Submit Button
+                Button {
+                    
+                    // Change the submitted state to true
+                    submitted = true
+                    
+                    // Check the answer and increment the counter if correct
+                    if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                        numCorrect += 1
+                    }
+                    
+                } label: {
+                    
+                    ZStack {
+                        
+                        RectangleCard(color: .green)
+                            .frame(height: 48)
+                        
+                        Text("Submit")
+                            .foregroundColor(.white)
+                            .bold()
+                    }
+                    .padding()
+                }
+                .disabled(selectedAnswerIndex == nil)
+
             }
             .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
             
