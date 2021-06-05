@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD5836B6266AD2F200A7197A /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5836B5266AD2F200A7197A /* TestView.swift */; };
 		CD855DCC2669775D0011AED5 /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD855DCB2669775D0011AED5 /* LearningApp.swift */; };
 		CD855DCE2669775D0011AED5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD855DCD2669775D0011AED5 /* HomeView.swift */; };
 		CD855DD02669775E0011AED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD855DCF2669775E0011AED5 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD5836B5266AD2F200A7197A /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		CD855DC82669775D0011AED5 /* Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD855DCB2669775D0011AED5 /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		CD855DCD2669775D0011AED5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				CD855DE9266993AF0011AED5 /* ContentView.swift */,
 				CD855DEB26699DAE0011AED5 /* ContentViewRow.swift */,
 				CD855DED2669A80C0011AED5 /* ContentDetailView.swift */,
+				CD5836B5266AD2F200A7197A /* TestView.swift */,
 				CD855E122669BC870011AED5 /* CodeTextView.swift */,
 				CD855E312669CFE40011AED5 /* RectangleCard.swift */,
 			);
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD5836B6266AD2F200A7197A /* TestView.swift in Sources */,
 				CD855DCE2669775D0011AED5 /* HomeView.swift in Sources */,
 				CD855DE826698C510011AED5 /* HomeViewRow.swift in Sources */,
 				CD855DEA266993AF0011AED5 /* ContentView.swift in Sources */,

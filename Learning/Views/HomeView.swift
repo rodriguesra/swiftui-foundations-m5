@@ -26,30 +26,63 @@ struct HomeView: View {
                         
                         ForEach(model.modules) { module in
                             
-                            // Learning card
                             VStack(spacing: 20.0) {
                                 
                                 NavigationLink(
                                     destination: ContentView()
                                         .onAppear(perform: {
-                                        model.beginModule(module.id)
-                                    }),
+                                            model.beginModule(module.id)
+                                        }),
                                     tag: module.id,
                                     selection: $model.currentContentSelected,
                                     label: {
+                                        // Learning card
                                         HomeViewRow(image: module.content.image,
                                                     title: "Learn \(module.category)",
                                                     description: module.content.description,
                                                     count: "\(module.content.lessons.count) lessons",
-                                                time: module.content.time)
+                                                    time: module.content.time)
                                     })
                                 
-                                // Test card
-                                HomeViewRow(image: module.test.image,
-                                            title: "\(module.category) Test",
-                                            description: module.test.description,
-                                            count: "\(module.test.questions.count) lessons",
-                                            time: module.test.time)
+//                                NavigationLink (destination: EmptyView()) {
+//                                    EmptyView()
+//                                 }
+                                
+                                NavigationLink(
+                                    destination: TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentTestSelected,
+                                    label: {
+                                        
+                                        // Test card
+                                        HomeViewRow(image: module.test.image,
+                                                    title: "\(module.category) Test",
+                                                    description: module.test.description,
+                                                    count: "\(module.test.questions.count) lessons",
+                                                    time: module.test.time)
+                                        
+                                    })
+                                
+                                NavigationLink(
+                                    destination: TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentTestSelected,
+                                    label: {
+                                        
+                                        // Test card
+                                        HomeViewRow(image: module.test.image,
+                                                    title: "\(module.category) Test",
+                                                    description: module.test.description,
+                                                    count: "\(module.test.questions.count) lessons",
+                                                    time: module.test.time)
+                                        
+                                    })
                             }
                         }
                     }
