@@ -87,7 +87,6 @@
 				CD855DDB266977F00011AED5 /* ViewModels */,
 				CD855DDC266977FC0011AED5 /* Models */,
 				CD855DDD266978080011AED5 /* Resources */,
-				CD855DDE2669780F0011AED5 /* Helpers */,
 				CD855DCF2669775E0011AED5 /* Assets.xcassets */,
 				CD855DD42669775E0011AED5 /* Info.plist */,
 				CD855DD12669775E0011AED5 /* Preview Content */,
@@ -143,13 +142,6 @@
 				CD855DF22669AD060011AED5 /* Constants.swift */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		CD855DDE2669780F0011AED5 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CD855DEF2669AAE00011AED5 /* Frameworks */ = {
