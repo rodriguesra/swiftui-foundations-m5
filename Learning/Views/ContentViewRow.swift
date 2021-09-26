@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentViewRow: View {
     
     @EnvironmentObject var model: ContentModel
-    var index: Int
     
+    var index: Int
     var lesson: Lesson {
         
         if index < model.currentModule?.content.lessons.count ?? 0 {
